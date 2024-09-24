@@ -1,7 +1,9 @@
-const form = document.getElementById('contact-form');
-const message = document.getElementById('message');
+const taskList = document.getElementById('tasklist');
 
-form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    message.textContent = 'Form send';
+taskList.addEventListener('click', (event) =>{
+    if(event.target.tagName === 'LI'){
+        const listItem = document.querySelectorAll('#taskList li')
+        listItem.forEach(item => item.classList.remove('selected'));
+        event.target.classList.add('selected');
+    }
 });
