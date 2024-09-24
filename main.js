@@ -1,24 +1,15 @@
-const changeColorBtn = document.createElement('button');
-changeColorBtn.classList.add('color-btn');
-changeColorBtn.textContent = 'Change color text';
-document.body.appendChild(changeColorBtn);
+const input = document.createElement('input');
+input.setAttribute('type', 'text');
+input.setAttribute('placeholder', 'focus here...');
+document.body.appendChild(input);
 
-const textElement = document.createElement('p');
-textElement.textContent = 'This text can change color, try click to button!';
-document.body.appendChild(textElement);
+const message = document.createElement('p');
+document.body.appendChild(message);
 
-const getRandomColor =  () =>{
-    const letters = '0123456789ABCDEF';
-    let color = '#';
-    for(let i = 0; i < 6; i++){
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-};
+input.addEventListener('focus', () =>{
+    message.textContent = 'Focus is acquired!';
+});
 
-const changeTextColor = () =>{
-    const randomColor = getRandomColor();
-    textElement.style.color = randomColor;
-};
-
-changeColorBtn.addEventListener('click', changeTextColor);
+input.addEventListener('blur', () =>{
+    message.textContent = 'Focus is lost!'
+});
