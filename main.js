@@ -1,15 +1,7 @@
-const input = document.createElement('input');
-input.setAttribute('type', 'text');
-input.setAttribute('placeholder', 'focus here...');
-document.body.appendChild(input);
+const video = document.getElementById('some-zhizel');
 
-const message = document.createElement('p');
-document.body.appendChild(message);
-
-input.addEventListener('focus', () =>{
-    message.textContent = 'Focus is acquired!';
-});
-
-input.addEventListener('blur', () =>{
-    message.textContent = 'Focus is lost!'
+video.addEventListener('dblclick', (event) =>{
+    event.preventDefault();
+    video.volume = 0.5;
+    console.log('Volume 50%'); 
 });
