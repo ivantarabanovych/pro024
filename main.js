@@ -1,7 +1,7 @@
-const video = document.getElementById('some-zhizel');
+const form = document.getElementById('contact-form');
+const message = document.getElementById('message');
 
-video.addEventListener('dblclick', (event) =>{
+form.addEventListener('submit', (event) => {
     event.preventDefault();
-    video.volume = 0.5;
-    console.log('Volume 50%'); 
+    message.textContent = 'Form send';
 });
